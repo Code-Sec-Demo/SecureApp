@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureApp – Home</title>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to SecureApp</h1>
+
+    <form id="loginForm" action="/profile" method="POST">
+        <label for="username">Username:</label>
+        <input id="username" name="username">
+
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password">
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const msg = params.get("msg");
+        if (msg) {
+            document.write("<div>" + msg + "</div>");
+        }
+    </script>
+</body>
+</html>
